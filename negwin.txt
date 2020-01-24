@@ -1,0 +1,30 @@
+//first negative integer in every window of size k.
+#include <iostream>
+using namespace std;
+int find(int l,int h,int arr[]){
+    for(int i=l;i<h;i++){
+        if(arr[i]<0){
+            return arr[i];
+        }
+    }
+    return 0;
+}
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+	    int n,k;
+	    cin>>n;
+	    int arr[n];
+	    for(int i=0;i<n;i++){
+	        cin>>arr[i];
+	    }
+	    cin>>k;
+	    for(int i=0;i<=n-k;i++){
+	        cout<<find(i,i+k,arr)<<" ";
+	    }
+	    cout<<endl;
+	}
+	//cout<<endl;
+	return 0;
+}
