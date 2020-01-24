@@ -1,0 +1,50 @@
+//roman number to integer
+#include <iostream>
+using namespace std;
+int value(char c){
+    if(c=='I')
+    return 1;
+    else if(c=='V')
+    return 5;
+    else if(c=='X')
+    return 10;
+    else if(c=='L')
+    return 50;
+    else if(c=='C')
+    return 100;
+    else if(c=='M')
+    return 1000;
+    else
+    return -1;
+}
+int roman(string str){
+    int len=str.length();
+    int x,y,r=0;
+    for(int i=0;i<len;i++){
+        if(i==len-1){
+            x=value(str[i]);
+            r+=x;
+            return r;
+        }
+        else{
+            x=value(str[i]);
+            y=value(str[i+1]);
+            if(x>=y)
+            {
+                r+=x;
+            }
+            else
+            r-=x;
+        }
+    }
+}
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+	string str;
+	cin>>str;
+	roman(str);
+    }
+	return 0;
+}
