@@ -1,0 +1,30 @@
+//distributing all balls without repitition
+#include <stdio.h>
+#include<iostream>
+using namespace std;
+ int a[26]={0};
+bool dist(int n,int k,string str){
+    for(int i=0;i<n;i++){
+        //int a[26]={0};
+        a[str[i]-'a']++;
+    }
+    for(int i=0;i<26;i++){
+    if(a[i]>k)
+    return false;
+    else
+    return true;
+    }
+}
+int main()
+{
+    int n,k;
+    string str;
+    cin>>n>>k;
+    cin>>str;
+    if(dist(n,k,str))
+    cout<<"yes";
+    else
+    cout<<"no";
+
+    return 0;
+}
